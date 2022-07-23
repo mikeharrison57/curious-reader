@@ -7,9 +7,15 @@ type State = {
   books: book[]
 }
 
-// type Book = {
-
-// }
+type Book = {
+  author: string
+  book_image: string
+  description: string
+  primary_isbn13: string
+  publisher: string
+  rank: number
+  title: string
+}
 
 class App extends Component {
   constructor(props) {
