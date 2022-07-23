@@ -4,7 +4,13 @@ import './App.css';
 import { fetchBookData } from '../api-calls'
 
 type State = {
-  books: book[]
+  booksLists: Lists[]
+}
+
+type Lists = {
+  list_id: number
+  list_name: string
+  books: Book[]
 }
 
 type Book = {
@@ -21,13 +27,15 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      books: []
+      bookLists: []
     }
   }
 
   componentDidMount() {
     fetchBookData()
-      .then(data => console.log(data.results.lists[0].books))
+      .then((data) => { 
+        this.setState({ bookLists: data.results.lists })
+      })
   }
   
   render() {
