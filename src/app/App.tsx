@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { fetchBookData } from '../api-calls'
+import Sidebar from '../Sidebar/Sidebar'
 
 type State = {
-  booksLists: Lists[]
+  booksLists: List[]
 }
 
-type Lists = {
+type List = {
   list_id: number
   list_name: string
   books: Book[]
@@ -34,15 +34,19 @@ class App extends Component {
   componentDidMount() {
     fetchBookData()
       .then((data) => { 
+        console.log(data.results.lists)
         this.setState({ bookLists: data.results.lists })
       })
   }
   
   render() {
     return (
-     <main>
-       <h1>Hello</h1>
-    </main>
+      <main>
+        <article>
+          <h1 className='App'>Curious Reader</h1>
+        </article>
+        <Sidebar />
+      </main>
   )
   }
 }
