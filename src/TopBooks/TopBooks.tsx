@@ -1,5 +1,6 @@
 import React from 'react'
 import {IState, IList, IBook} from '../Interfaces'
+import BookCard from '../BookCard/BookCard'
 
 interface Props {
   genres: IState
@@ -10,14 +11,17 @@ const TopBooks = ({ genres }: Props) => {
 
 
 
-  const getNumOneBook = genres.bookLists.map((list) => {
-   return list.books[0]
+  const numberOneBooks = genres.bookLists.map((list) => {
+   return (
+ 
+    <BookCard book={list.books[0]}
+    />
+   )
   })
 
-  console.log('books', getNumOneBook)
   return (
-    <div>
-
+    <div className='books-container'>
+      {numberOneBooks}
     </div>
   )
 }
