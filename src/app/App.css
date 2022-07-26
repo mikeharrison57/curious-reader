@@ -8,6 +8,7 @@ main {
 
 .nav {
   background-color: aquamarine;
-  margin: 1rem;
+  padding: 1rem;
+  position: fixed;
+  height: 100%;
 }
-
