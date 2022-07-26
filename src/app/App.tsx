@@ -36,9 +36,14 @@ class App extends React.Component<{}, IState> {
           </main>
        }
        />
+
+       <Route exact path='/:list_name' render={({match}) => {
         <section className='book-genre-page'>
-          <BookGenrePage genres={this.state} />
+          <BookGenrePage listName={match.params['list_name']} genres={this.state} />
         </section>
+       
+        }}
+        />
       </>
     )
   }
