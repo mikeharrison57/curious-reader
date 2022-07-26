@@ -10,8 +10,8 @@ interface Props {
 const Sidebar = ({ genres }: Props)  => {
   const bookGenres = genres.bookLists.map((list) => {
     return (  
-      <NavLink to={`/${list.list_name}`}>
-    <p key={list.list_id}>{list.list_name}</p>
+      <NavLink key={list.list_id} to={`/${list.list_name}`}>
+    <p>{list.list_name}</p>
       </NavLink>
     )
   })

@@ -17,7 +17,7 @@ const BookGenrePage = ({ genres, listName }: Props) => {
   console.log('this is selectedGenre.books', selectedGenre.books)
   const selectedGenreBooks = selectedGenre.books.map(book => {
     return (
-      <BookCard book={book}/>
+      <BookCard key={book.primary_isbn13} book={book}/>
     )
   })
 
