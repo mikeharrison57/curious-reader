@@ -1,9 +1,7 @@
-.body {
-  display: flex;
-}
-
 main {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .nav {
@@ -11,4 +9,8 @@ main {
   padding: 1rem;
   position: fixed;
   height: 100%;
+}
+
+.top-books-container {
+  margin-left: 35vh;
 }

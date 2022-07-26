@@ -26,7 +26,7 @@ class App extends React.Component<{}, IState> {
           <h1 className='App'>Curious Reader</h1>
           <Sidebar genres={this.state} />
         </div>
-        <section className='body'>
+        <section className='top-books-container'>
           <TopBooks genres={this.state}/>
         </section>
       </main>
