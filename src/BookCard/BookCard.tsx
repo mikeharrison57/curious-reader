@@ -1,5 +1,6 @@
 import React from 'react'
 import { IBook } from '../Interfaces';
+import './BookCard.css'
 
 interface Props {
   book: IBook

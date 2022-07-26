@@ -1,6 +1,7 @@
 import React from 'react'
 import {IState, IList, IBook} from '../Interfaces'
 import BookCard from '../BookCard/BookCard'
+import './TopBooks.css'
 
 interface Props {
   genres: IState
