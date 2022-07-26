@@ -21,15 +21,15 @@ class App extends React.Component<{}, IState> {
   
   render = () => {
     return (
-      <main>
-        <div className='nav'>
-          <h1 className='App'>Curious Reader</h1>
+      <>
+        <nav>
+          <h1>Curious Reader</h1>
           <Sidebar genres={this.state} />
-        </div>
-        <section className='top-books-container'>
+        </nav>
+        <main>
           <TopBooks genres={this.state}/>
-        </section>
-      </main>
+        </main>
+      </>
     )
   }
 }

@@ -7,7 +7,6 @@ interface Props {
 }
 
 const Sidebar = ({ genres }: Props)  => {
-  
   const bookGenres = genres.bookLists.map((list) => {
     return (   
     <p key={list.list_id}>{list.list_name}</p>
@@ -15,9 +14,9 @@ const Sidebar = ({ genres }: Props)  => {
   })
   
   return (
-    <aside>
+    <section className='genres-container'>
       {bookGenres}
-    </aside>
+    </section>
   )
 }
 
