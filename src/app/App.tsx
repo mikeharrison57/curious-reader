@@ -5,6 +5,7 @@ import Sidebar from '../Sidebar/Sidebar'
 import {IState, IList, IBook} from '../Interfaces'
 import TopBooks from '../TopBooks/TopBooks'
 import BookGenrePage from '../BookGenrePage/BookGenrePage';
+import { NavLink, Route } from 'react-router-dom';
 
 class App extends React.Component<{}, IState> {
     state: IState = {
@@ -24,14 +25,19 @@ class App extends React.Component<{}, IState> {
     return (
       <>
         <nav>
-          <h1>Curious Reader</h1>
+          <NavLink to={'/'}>
+            <h1>Curious Reader</h1>
+          </NavLink>
           <Sidebar genres={this.state} />
         </nav>
-        <main>
-          <TopBooks genres={this.state}/>
-        </main>
+        <Route exact path='/' render={() =>
+          <main>
+            <TopBooks genres={this.state}/>
+          </main>
+       }
+       />
         <section className='book-genre-page'>
-          <BookGenrePage />
+          <BookGenrePage genres={this.state} />
         </section>
       </>
     )

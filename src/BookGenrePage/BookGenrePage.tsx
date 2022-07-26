@@ -6,10 +6,10 @@ interface Props {
   genres: IState
 }
 
-const BookGenrePage = () => {
-
+const BookGenrePage = ({ genres }: Props) => {
+  console.log('this is data from BookGenrePage', genres)
   return (
-
+    <div>I am BookGenre Component</div>
   )
 }
 
