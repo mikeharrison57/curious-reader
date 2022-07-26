@@ -5,26 +5,6 @@ import Sidebar from '../Sidebar/Sidebar'
 import {IState, IList, IBook} from '../Interfaces'
 import TopBooks from '../TopBooks/TopBooks'
 
-// type State = {
-//   bookLists: List[]
-// }
-
-// type List = {
-//   list_id: number
-//   list_name: string
-//   books: Book[]
-// }
-
-// type Book = {
-//   author: string
-//   book_image: string
-//   description: string
-//   primary_isbn13: string
-//   publisher: string
-//   rank: number
-//   title: string
-// }
-
 class App extends React.Component<{}, IState> {
     state: IState = {
       bookLists: []
@@ -42,11 +22,13 @@ class App extends React.Component<{}, IState> {
   render = () => {
     return (
       <main>
-        <article>
+        <div className='nav'>
           <h1 className='App'>Curious Reader</h1>
-        </article>
-        <TopBooks genres={this.state}/>
-        <Sidebar genres={this.state} />
+          <Sidebar genres={this.state} />
+        </div>
+        <section className='body'>
+          <TopBooks genres={this.state}/>
+        </section>
       </main>
     )
   }

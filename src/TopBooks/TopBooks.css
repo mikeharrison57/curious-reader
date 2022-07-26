@@ -3,17 +3,6 @@
   grid-gap: 9rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-items: start;
-  margin: 1rem auto 0 auto;
-  width: 80%;
+  width: 90%;
 }
 
-
-/* display: grid;
-  grid-template-columns: 150px 20px 350px;
-  grid-template-rows: auto;
-
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 6rem;
-  padding: 2rem; */
