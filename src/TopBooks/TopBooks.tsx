@@ -22,6 +22,7 @@ const TopBooks = ({ genres }: Props) => {
     <section className='books-container'>
       {numberOneBooks}
     </section>
+ 
   )
 }
 

@@ -4,6 +4,7 @@ import { fetchBookData } from '../api-calls'
 import Sidebar from '../Sidebar/Sidebar'
 import {IState, IList, IBook} from '../Interfaces'
 import TopBooks from '../TopBooks/TopBooks'
+import BookGenrePage from '../BookGenrePage/BookGenrePage';
 
 class App extends React.Component<{}, IState> {
     state: IState = {
@@ -29,6 +30,9 @@ class App extends React.Component<{}, IState> {
         <main>
           <TopBooks genres={this.state}/>
         </main>
+        <section className='book-genre-page'>
+          <BookGenrePage />
+        </section>
       </>
     )
   }
