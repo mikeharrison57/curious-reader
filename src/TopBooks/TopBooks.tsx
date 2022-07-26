@@ -14,16 +14,15 @@ const TopBooks = ({ genres }: Props) => {
 
   const numberOneBooks = genres.bookLists.map((list) => {
    return (
- 
-    <BookCard book={list.books[0]}
-    />
+    <BookCard key={list.list_id} book={list.books[0]}/>
    )
   })
 
   return (
-    <div className='books-container'>
+    <section className='books-container'>
       {numberOneBooks}
-    </div>
+    </section>
+ 
   )
 }
 

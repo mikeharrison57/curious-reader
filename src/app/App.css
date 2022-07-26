@@ -1,16 +1,19 @@
-main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+* {
+  border: 1px solid blue;
 }
 
-.nav {
+main { 
+  padding-left: 33vh;
+  padding-right: 11vh;
+  padding-top: 3vh;
+}
+
+nav {
   background-color: aquamarine;
-  padding: 1rem;
-  position: fixed;
   height: 100%;
-}
-
-.top-books-container {
-  margin-left: 35vh;
+  width: 280px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
 }
