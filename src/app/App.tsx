@@ -3,6 +3,7 @@ import './App.css';
 import { fetchBookData } from '../api-calls'
 import Sidebar from '../Sidebar/Sidebar'
 import {IState, IList, IBook} from '../Interfaces'
+import TopBooks from '../TopBooks/TopBooks'
 
 // type State = {
 //   bookLists: List[]
@@ -44,6 +45,7 @@ class App extends React.Component<{}, IState> {
         <article>
           <h1 className='App'>Curious Reader</h1>
         </article>
+        <TopBooks genres={this.state}/>
         <Sidebar genres={this.state} />
       </main>
     )
