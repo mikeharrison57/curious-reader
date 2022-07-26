@@ -3,26 +3,7 @@ import './App.css';
 import { fetchBookData } from '../api-calls'
 import Sidebar from '../Sidebar/Sidebar'
 import {IState, IList, IBook} from '../Interfaces'
-
-// type State = {
-//   bookLists: List[]
-// }
-
-// type List = {
-//   list_id: number
-//   list_name: string
-//   books: Book[]
-// }
-
-// type Book = {
-//   author: string
-//   book_image: string
-//   description: string
-//   primary_isbn13: string
-//   publisher: string
-//   rank: number
-//   title: string
-// }
+import TopBooks from '../TopBooks/TopBooks'
 
 class App extends React.Component<{}, IState> {
     state: IState = {
@@ -41,10 +22,13 @@ class App extends React.Component<{}, IState> {
   render = () => {
     return (
       <main>
-        <article>
+        <div className='nav'>
           <h1 className='App'>Curious Reader</h1>
-        </article>
-        <Sidebar genres={this.state} />
+          <Sidebar genres={this.state} />
+        </div>
+        <section className='top-books-container'>
+          <TopBooks genres={this.state}/>
+        </section>
       </main>
     )
   }

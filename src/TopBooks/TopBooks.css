@@ -1,0 +1,8 @@
+.books-container {
+  display: grid;
+  grid-gap: 9rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: start;
+  /* width: 90%; */
+}
+

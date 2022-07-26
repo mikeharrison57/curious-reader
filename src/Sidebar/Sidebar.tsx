@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import {IState, IList, IBook} from '../Interfaces'
+import './Sidebar.css'
 
 interface Props {
   genres: IState
