@@ -8,6 +8,10 @@ export interface IList {
   books: IBook[]
 }
 
+export interface IBooks {
+  books: IBook[]
+}
+
 export interface IBook  {
   author: string
   book_image: string
