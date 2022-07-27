@@ -7,7 +7,6 @@ import { isConstructorDeclaration } from 'typescript';
 import {fetchBookData} from '../api-calls'
 
 interface Props {
-  genres?: IState
   listName: string
 }
 // const [lists, setLists] = useState<IState>()
@@ -29,8 +28,11 @@ interface Props {
 //   }
 
 class BookGenrePage extends Component<{}, IState> {
-  state: IState = {
-    bookLists: []
+  constructor(props: Props) {
+    super(props) 
+    this.state = {
+      bookLists: []
+    }
   }
 
   componentDidMount = () => {
@@ -42,21 +44,21 @@ class BookGenrePage extends Component<{}, IState> {
       })
   }
 
-  // console.log('lists', lists)
   
-  // const selectedGenre: IList = lists.bookLists.find(genre => genre.list_name === this.props.listName)
-  // console.log('this is selectedGenre.books', selectedGenre.books)
-  // const selectedGenreBooks = selectedGenre.books.map(book => {
-  //   return (
-  //     <BookCard key={book.primary_isbn13} book={book}/>
-  //     )
-  //   })
+  
+  const selectedGenre: IList = this.state.bookLists.find(genre => genre.list_name === this.props.listName)
+  console.log('this is selectedGenre.books', selectedGenre.books)
+  const selectedGenreBooks = selectedGenre.books.map(book => {
+    return (
+      <BookCard key={book.primary_isbn13} book={book}/>
+      )
+    })
   
   render() {
     return (
     <>
     <div className='selected-genre-books'>
-      {/* {selectedGenreBooks} */}
+      {selectedGenreBooks}
     </div>
     </>
     )
