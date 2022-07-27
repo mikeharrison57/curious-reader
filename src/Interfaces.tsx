@@ -9,7 +9,7 @@ export interface IList {
 }
 
 
-export interface IBook  {
+export interface IBook {
   author: string
   book_image: string
   description: string
