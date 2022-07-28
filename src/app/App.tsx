@@ -15,7 +15,6 @@ class App extends React.Component<{}, IState> {
   componentDidMount = () => {
     fetchBookData()
     .then((data) => { 
-        // console.log(data.results.lists)
         this.setState({ bookLists: data.results.lists })
         console.log(this.state.bookLists)
       })
@@ -39,9 +38,10 @@ class App extends React.Component<{}, IState> {
 
        <Route exact path='/:list_name' render={({match}) => {
         {console.log('this is match', match.params.list_name)}
-        return (<section className='book-genre-page'>
-          <BookGenrePage listName={match.params.list_name} genres={this.state} />
-        </section>
+        return (
+          <section className='book-genre-page'>
+            <BookGenrePage listName={match.params.list_name} />
+          </section>
         )
         }}
         />
