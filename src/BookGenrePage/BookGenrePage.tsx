@@ -7,7 +7,6 @@ import './BookGenrePage.css'
 interface Props {
   genres: IState
   listName: string
-  // books: IBooks
 }
 
 
@@ -22,16 +21,10 @@ const BookGenrePage = ({ genres, listName }: Props) => {
   })
 
   return (
-    <>
-    {/* {{selectedGenreBooks} } */}
-    {/* {console.log('this is list name', listName)} */}
-    {/* {console.log('this is selectedGenre', selectedGenre)} */}
-    {/* <div>I am BookGenre Component</div>
-    <div>{listName}</div> */}
-    <div className='selected-genre-books'>
+    <section className='selected-genre-books'>
       {selectedGenreBooks}
-    </div>
-    </>
+    </section>
+    
   )
 }
 
