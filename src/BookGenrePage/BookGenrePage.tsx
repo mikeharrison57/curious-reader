@@ -35,7 +35,24 @@ const BookGenrePage = ({listName}: Props) => {
 
   useEffect(() => {
       getListData()
+      return clearEffect();
   }, [listName])
+
+  const clearEffect = () => {
+    setList({
+      "list_name": "",
+      "list_name_encoded": "",
+      "bestsellers_date": "",
+      "published_date": "",
+      "published_date_description": "",
+      "next_published_date": "",
+      "previous_published_date": "",
+      "display_name": "",
+      "normal_list_ends_at": 0,
+      "updated": "",
+      "books": []
+    })
+  }
 
   const selecetedGenreBooks =  list.books.map((book) => {
     return (
