@@ -21,9 +21,23 @@ describe('Top Book Page', () => {
     cy.get('.book-card').last().should('contain.text', 'Bessel van der Kolk')
   })
 
+  it('Should have a navbar', () => {
+    cy.get('nav').should('be.visible')
+  })
 
-  it('should test if true is true', () => {
-    expect(true).to.equal(true)
+  it('It should contain a list of genres', () => {
+    cy.get('.genres-container').find('p').should('have.length', 2)
+    cy.get('.genres-container').find('p').first().should('have.text', 'Combined Print and E-Book Fiction')
+  })
+
+  it('Should be able to navigate to a genre page', () => {
+    cy.get('.genres-container').find('p').last().click()
+    cy.url().should('eq', 'http://localhost:3000/Combined%20Print%20and%20E-Book%20Nonfiction')
+  })
+
+  it('Should be able to navigate to a genre page', () => {
+    cy.get('.genres-container').find('p').last().click()
+    cy.url().should('eq', 'http://localhost:3000/Combined%20Print%20and%20E-Book%20Nonfiction')
   })
 })
 
