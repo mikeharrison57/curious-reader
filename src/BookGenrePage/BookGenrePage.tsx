@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { IState, IList } from '../Interfaces'
+// import { IState, IList } from '../Interfaces'
 import { fetchBooksByGenre } from '../api-calls'
 import BookCard from '../BookCard/BookCard'
 import './BookGenrePage.css'
 
 interface Props {
-  // genres?: IState
   listName: string
 }
 
@@ -35,13 +34,12 @@ const BookGenrePage = ({listName}: Props) => {
   }
 
   useEffect(() => {
-    getListData()
+      getListData()
   }, [listName])
 
   const selecetedGenreBooks =  list.books.map((book) => {
     return (
       <BookCard key={book.isbns[1]} book={book}/>
-      // key={book.isbns[1]} 
     )
   })
 
@@ -53,10 +51,3 @@ const BookGenrePage = ({listName}: Props) => {
 }
 
 export default BookGenrePage;
-
-  // } extends Component<{}, IState> {
-  //   constructor(props: Props) {
-  //     super(props)
-  //     this.state = {
-  //       genreList: []
-  //     }
