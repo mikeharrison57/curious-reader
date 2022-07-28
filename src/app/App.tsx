@@ -16,7 +16,6 @@ class App extends React.Component<{}, IState> {
     fetchBookData()
     .then((data) => { 
         this.setState({ bookLists: data.results.lists })
-        console.log(this.state.bookLists)
       })
   }
   
