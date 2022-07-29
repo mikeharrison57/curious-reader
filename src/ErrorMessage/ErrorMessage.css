@@ -1,7 +1,9 @@
 .error {
-  text-align: center;
-  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E7E7E7;
   font-size: xx-large;
-  color: pink;
+  color: #FF6663;
   height: 100vh;
 }
