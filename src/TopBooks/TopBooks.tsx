@@ -1,11 +1,7 @@
-import React from 'react'
-import {IState, IList, IBook} from '../Interfaces'
-import BookCard from '../BookCard/BookCard'
-import './TopBooks.css'
-
-interface Props {
-  genres: IState
-}
+import React from 'react';
+import {IState, IList, IBook, Props} from '../Interfaces';
+import BookCard from '../BookCard/BookCard';
+import './TopBooks.css';
 
 const TopBooks = ({ genres }: Props) => {
 

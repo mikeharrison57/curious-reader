@@ -1,3 +1,7 @@
+export interface Props {
+  genres: IState
+}
+
 export interface IState {
   bookLists: IList[]
   error: boolean
