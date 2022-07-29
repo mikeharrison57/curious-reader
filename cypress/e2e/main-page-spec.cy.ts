@@ -1,4 +1,4 @@
-import cypress from "cypress"
+import cypress from "cypress";
 
 describe('Top Book Page', () => {
   beforeEach(() => {
@@ -56,13 +56,13 @@ describe('Top Book Page', () => {
   //   .get('h3').should('have.text', 'Hey, we\'re having some technical difficulties right now. Come see us again soon!')
   // })
 
-  it('Should display an error message if a network request fails.', () => {
-    cy.intercept('GET', 'https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Lyj', {
-      statusCode: 500,
-      body: {
-        error: "Cypress forced 500"
-      }
-    })
-    .get('h3').contains('Hey, we\'re having some technical difficulties right now. Come see us again soon!')
-  })
+  // it('Should display an error message if a network request fails.', () => {
+  //   cy.intercept('GET', 'https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Lyj', {
+  //     statusCode: 500,
+  //     body: {
+  //       error: "Cypress forced 500"
+  //     }
+  //   })
+  //   .get('h3').contains('Hey, we\'re having some technical difficulties right now. Come see us again soon!')
+  // })
 })
