@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-// import { IState, IList } from '../Interfaces'
-import { fetchBooksByGenre } from '../api-calls'
-import BookCard from '../BookCard/BookCard'
-import './BookGenrePage.css'
-import ErrorMessage from '../ErrorMessage/ErrorMessage'
+import { fetchBooksByGenre } from '../api-calls';
+import BookCard from '../BookCard/BookCard';
+import '../BookGenrePage/BookGenrePage.css'
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 interface Props {
   listName: string
   error: boolean
-}
+};
 
 const BookGenrePage = ({listName, error}: Props) => {
 
@@ -24,9 +23,9 @@ const BookGenrePage = ({listName, error}: Props) => {
     "normal_list_ends_at": 0,
     "updated": "",
     "books": []
-  })
+  });
 
-  const [genreError, setGenreError] = useState(error)
+  const [genreError, setGenreError] = useState(error);
 
   const getListData = () => {
     fetchBooksByGenre(listName)
@@ -37,12 +36,12 @@ const BookGenrePage = ({listName, error}: Props) => {
       console.log(err)
       setGenreError(true)
     })
-  }
+  };
 
   useEffect(() => {
       getListData()
       return clearEffect();
-  }, [listName])
+  }, [listName]);
 
   const clearEffect = () => {
     setList({
@@ -57,20 +56,20 @@ const BookGenrePage = ({listName, error}: Props) => {
       "normal_list_ends_at": 0,
       "updated": "",
       "books": []
-    })
-  }
+    });
+  };
 
   const selectedGenreBooks =  list.books.map((book) => {
     return (
       <BookCard key={book.isbns[1]} book={book}/>
-    )
-  })
+    );
+  });
 
   return (
-    <section className='selected-genre-books'>
+    <section className='books-container'>
       {genreError ? <ErrorMessage /> : selectedGenreBooks}
     </section>
-  )
-}
+  );
+};
 
 export default BookGenrePage;

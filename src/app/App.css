@@ -1,19 +1,21 @@
-* {
-  border: 1px solid blue;
-}
-
-main { 
-  padding-left: 33vh;
-  padding-right: 11vh;
-  padding-top: 3vh;
-}
-
 nav {
-  background-color: aquamarine;
+  background-color: #422040;
+  color: white;
   height: 100%;
-  width: 280px;
+  width: 18%;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
+  padding: 18px;
+  overflow-y: auto;
+}
+
+nav::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  color: white;
+  text-decoration: none;
 }
