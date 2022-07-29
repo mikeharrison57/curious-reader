@@ -11,6 +11,10 @@ nav {
   overflow-y: auto;
 }
 
+nav::-webkit-scrollbar {
+  display: none;
+}
+
 h1 {
   color: white;
   text-decoration: none;

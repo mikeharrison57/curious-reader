@@ -15,7 +15,7 @@ const BookCard = ({ book }: Props) => {
       <div className='description-box'>
         <p className='title'>{book.title}</p>
         <p className='author'>{book.author}</p>
-        <p>{book.description}</p>
+        <p>{!book.description ? 'There currently is no description for this title' : book.description}</p>
         <p>Publisher {book.publisher}</p>
         <p>Rank {book.rank}</p>
       </div>
