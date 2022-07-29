@@ -1,0 +1,94 @@
+
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2022 The New York Times Company.  All Rights Reserved.",
+  "num_results": 230,
+  "results": {
+      "bestsellers_date": "2022-07-23",
+      "published_date": "2022-08-07",
+      "published_date_description": "latest",
+      "previous_published_date": "2022-07-31",
+      "next_published_date": "",
+      "lists": [
+          {
+              "list_id": 704,
+              "list_name": "Combined Print and E-Book Fiction",
+              "list_name_encoded": "combined-print-and-e-book-fiction",
+              "display_name": "Combined Print & E-Book Fiction",
+              "updated": "WEEKLY",
+              "list_image": null,
+              "list_image_width": null,
+              "list_image_height": null,
+              "books": [
+                  {
+                      "age_group": "",
+                      "amazon_product_url": "https://www.amazon.com/Where-Crawdads-Sing-Delia-Owens/dp/0735219095?tag=NYTBSREV-20",
+                      "article_chapter_link": "",
+                      "author": "Delia Owens",
+                      "book_image": "https://storage.googleapis.com/du-prd/books/images/9780735219090.jpg",
+                      "book_image_width": 328,
+                      "book_image_height": 495,
+                      "book_review_link": "",
+                      "book_uri": "nyt://book/08a5730d-43e5-586d-8ce6-4b891eb75fe1",
+                      "contributor": "by Delia Owens",
+                      "contributor_note": "",
+                      "created_date": "2022-07-27 22:06:29",
+                      "description": "In a quiet town on the North Carolina coast in 1969, a young woman who survived alone in the marsh becomes a murder suspect.",
+                      "first_chapter_link": "",
+                      "price": "0.00",
+                      "primary_isbn10": "0735219109",
+                      "primary_isbn13": "9780735219106",
+                      "publisher": "Putnam",
+                      "rank": 1,
+                      "rank_last_week": 1,
+                      "sunday_review_link": "",
+                      "title": "WHERE THE CRAWDADS SING",
+                      "updated_date": "2022-07-27 22:10:50",
+                      "weeks_on_list": 170
+                    
+                  }
+                ]
+            },
+            {
+              "list_id": 708,
+              "list_name": "Combined Print and E-Book Nonfiction",
+              "list_name_encoded": "combined-print-and-e-book-nonfiction",
+              "display_name": "Combined Print & E-Book Nonfiction",
+              "updated": "WEEKLY",
+              "list_image": null,
+              "list_image_width": null,
+              "list_image_height": null,
+              "books": [
+                  {
+                      "age_group": "",
+                      "amazon_product_url": "http://www.amazon.com/The-Body-Keeps-Score-Healing/dp/0670785938?tag=NYTBSREV-20",
+                      "article_chapter_link": "",
+                      "author": "Bessel van der Kolk",
+                      "book_image": "https://storage.googleapis.com/du-prd/books/images/9780670785933.jpg",
+                      "book_image_width": 128,
+                      "book_image_height": 193,
+                      "book_review_link": "https://www.nytimes.com/2018/10/18/books/review/how-to-rewire-your-traumatized-brain.html",
+                      "book_uri": "nyt://book/e3e33e9d-0e67-5fec-b0d2-2ecddc38ce0e",
+                      "contributor": "by Bessel van der Kolk",
+                      "contributor_note": "",
+                      "created_date": "2022-07-27 22:06:29",
+                      "description": "How trauma affects the body and mind, and innovative treatments for recovery.",
+                      "first_chapter_link": "",
+                      "price": "0.00",
+                      "primary_isbn10": "0143127748",
+                      "primary_isbn13": "9780143127741",
+                      "publisher": "Penguin",
+                      "rank": 1,
+                      "rank_last_week": 3,
+                      "sunday_review_link": "",
+                      "title": "THE BODY KEEPS THE SCORE",
+                      "updated_date": "2022-07-27 22:10:50",
+                      "weeks_on_list": 100
+                  }
+            ] 
+          }   
+        ]  
+      }
+}
+        
+              

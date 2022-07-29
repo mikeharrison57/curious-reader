@@ -1,5 +1,6 @@
 export interface IState {
   bookLists: IList[]
+  error: boolean
 }
 
 export interface IList {

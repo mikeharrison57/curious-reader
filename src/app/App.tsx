@@ -6,10 +6,12 @@ import {IState, IList, IBook} from '../Interfaces'
 import TopBooks from '../TopBooks/TopBooks'
 import BookGenrePage from '../BookGenrePage/BookGenrePage';
 import { NavLink, Route } from 'react-router-dom';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 class App extends React.Component<{}, IState> {
     state: IState = {
-      bookLists: []
+      bookLists: [],
+      error: false
     }
 
   componentDidMount = () => {
@@ -17,12 +19,18 @@ class App extends React.Component<{}, IState> {
     .then((data) => { 
         this.setState({ bookLists: data.results.lists })
       })
+    .catch((error) => {
+      console.log(error)
+      this.setState({error: true})
+    })
   }
   
   render = () => {
     return (
       <>
-        <nav>
+      {this.state.error ? <div><ErrorMessage /></div> :
+        <>
+          <nav>
           <NavLink to={'/'}>
             <h1>Curious Reader</h1>
           </NavLink>
@@ -39,11 +47,13 @@ class App extends React.Component<{}, IState> {
         {console.log('this is match', match.params.list_name)}
         return (
           <section className='book-genre-page'>
-            <BookGenrePage listName={match.params.list_name} />
+            <BookGenrePage listName={match.params.list_name} error={this.state.error}/>
           </section>
         )
         }}
         />
+        </>
+        }
       </>
     )
   }
