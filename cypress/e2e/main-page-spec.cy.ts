@@ -43,10 +43,9 @@ describe('Top Book Page', () => {
     cy.get('.book-card').first().should('contain.text', 'WHERE THE CRAWDADS SING')
     cy.go('forward')
     cy.url().should('eq', 'http://localhost:3000/Combined%20Print%20and%20E-Book%20Fiction')
+    // revisit test to add data sample after fixture is added.
   })
+  // revisit to add error handling
 })
 
-
-
 // select different book genres/ filtered
-// go back to home page
