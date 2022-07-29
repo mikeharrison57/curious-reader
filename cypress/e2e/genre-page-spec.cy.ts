@@ -10,5 +10,7 @@ describe('Top Book Page', () => {
     cy.get('h1').should('contain.text', 'Curious Reader')
   })
 
-  it('Should ')
+  it('Should diplay books from the correct genre' , () => {
+    cy.get('.books-container').find('.book-card').should('have.length', 15)
+  })
 })
