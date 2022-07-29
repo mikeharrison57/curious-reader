@@ -2,11 +2,12 @@ nav {
   background-color: #0B3954;
   color: white;
   height: 100%;
-  width: 20%;
+  width: 18%;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
+  padding: 18px;
 }
 
 h1 {

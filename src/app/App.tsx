@@ -42,7 +42,7 @@ class App extends React.Component<{}, IState> {
       
         <Route exact path='/:list_name' render={({match}) => {
           return (
-              <BookGenrePage listName={match.params.list_name} error={this.state.error}/>
+            <BookGenrePage listName={match.params.list_name} error={this.state.error}/>
           )
           }}/>
         </main>
