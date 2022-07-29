@@ -19,6 +19,7 @@ describe('Top Book Page', () => {
     cy.get('.book-card').last().should('contain.text', 'THE BODY KEEPS THE SCORE')
     cy.get('.book-card').first().should('contain.text', 'In a quiet town on the North Carolina coast in 1969, a young woman who survived alone in the marsh becomes a murder suspect.')
     cy.get('.book-card').last().should('contain.text', 'Bessel van der Kolk')
+    cy.get('img').first().should('have.attr', 'src', 'https://storage.googleapis.com/du-prd/books/images/9780735219090.jpg')
   })
 
   it('Should have a navbar', () => {
@@ -35,13 +36,17 @@ describe('Top Book Page', () => {
     cy.url().should('eq', 'http://localhost:3000/Combined%20Print%20and%20E-Book%20Nonfiction')
   })
 
-  it('Should be able to navigate to a genre page', () => {
-    cy.get('.genres-container').find('p').last().click()
-    cy.url().should('eq', 'http://localhost:3000/Combined%20Print%20and%20E-Book%20Nonfiction')
+  it('Should be able to navigate using the window back and forward buttons.', () => {
+    cy.visit('http://localhost:3000/Combined%20Print%20and%20E-Book%20Fiction')
+    cy.go('back')
+    cy.url().should('eq', 'http://localhost:3000/')
+    cy.get('.book-card').first().should('contain.text', 'WHERE THE CRAWDADS SING')
+    cy.go('forward')
+    cy.url().should('eq', 'http://localhost:3000/Combined%20Print%20and%20E-Book%20Fiction')
   })
 })
 
-// check the length of the fixture
-// see a home page with previews
+
+
 // select different book genres/ filtered
 // go back to home page
