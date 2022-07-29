@@ -1,13 +1,15 @@
-* {
-  border: 1px solid blue;
-}
-
 nav {
-  background-color: aquamarine;
+  background-color: #0B3954;
+  color: white;
   height: 100%;
-  width: 280px;
+  width: 20%;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
+}
+
+h1 {
+  color: white;
+  text-decoration: none;
 }

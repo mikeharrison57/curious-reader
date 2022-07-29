@@ -31,7 +31,7 @@ class App extends React.Component<{}, IState> {
       {this.state.error ? <div><ErrorMessage /></div> :
         <main>
           <nav>
-            <NavLink to={'/'}>
+            <NavLink to={'/'} style={{ textDecoration: 'none' }}>
               <h1>Curious Reader</h1>
             </NavLink>
             <Sidebar genres={this.state} />

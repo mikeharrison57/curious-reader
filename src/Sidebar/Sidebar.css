@@ -1,3 +1,7 @@
 .genres-container {
   height: 100%;
 }
+
+.genre-links {
+  color: white;
+}

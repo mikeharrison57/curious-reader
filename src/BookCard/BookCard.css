@@ -1,10 +1,13 @@
 .book-card {
-  width: 255px;
+  width: 233px;
+  background-color: #FF6663;
+  color: white;
 }
 
 .book-image {
-  width: 233px;
-  height: 100%;
+  width: 239px;
+  height: 317px;
+  object-fit: fill;
 }
 
 .book-image-container {
