@@ -47,7 +47,7 @@ class App extends React.Component<{}, IState> {
         {console.log('this is match', match.params.list_name)}
         return (
           <section className='book-genre-page'>
-            <BookGenrePage listName={match.params.list_name} />
+            <BookGenrePage listName={match.params.list_name} error={this.state.error}/>
           </section>
         )
         }}

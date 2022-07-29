@@ -9,7 +9,7 @@ const fetchBookData = () => {
 }
 
 const fetchBooksByGenre = (genre) => {
-  return fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${genre}.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Lyj`)
+  return fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${genre}.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Ly`)
     .then((response) => {
       if (response.ok) {
         return response.json()

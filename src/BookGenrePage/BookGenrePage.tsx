@@ -3,12 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { fetchBooksByGenre } from '../api-calls'
 import BookCard from '../BookCard/BookCard'
 import './BookGenrePage.css'
+import ErrorMessage from '../ErrorMessage/ErrorMessage'
 
 interface Props {
   listName: string
+  error: boolean
 }
 
-const BookGenrePage = ({listName}: Props) => {
+const BookGenrePage = ({listName, error}: Props) => {
 
   const [ list, setList ] = useState({
     "list_name": "",
@@ -24,12 +26,16 @@ const BookGenrePage = ({listName}: Props) => {
     "books": []
   })
 
-  // const [ selectedList ] = useState(listName)
+  const [genreError, setGenreError] = useState(error)
 
   const getListData = () => {
     fetchBooksByGenre(listName)
     .then((data) => { 
       setList(data.results)
+    })
+    .catch((err) => {
+      console.log(err)
+      setGenreError(true)
     })
   }
 
@@ -54,7 +60,7 @@ const BookGenrePage = ({listName}: Props) => {
     })
   }
 
-  const selecetedGenreBooks =  list.books.map((book) => {
+  const selectedGenreBooks =  list.books.map((book) => {
     return (
       <BookCard key={book.isbns[1]} book={book}/>
     )
@@ -62,7 +68,7 @@ const BookGenrePage = ({listName}: Props) => {
 
   return (
     <section className='selected-genre-books'>
-      {selecetedGenreBooks}
+      {genreError ? <ErrorMessage /> : selectedGenreBooks}
     </section>
   )
 }
