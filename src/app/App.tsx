@@ -27,9 +27,9 @@ class App extends React.Component<{}, IState> {
   
   render = () => {
     return (
-    <body>
+    <>
       {this.state.error ? <div><ErrorMessage /></div> :
-        <main>
+        <>
           <nav>
             <NavLink to={'/'} style={{ textDecoration: 'none' }}>
               <h1>Curious Reader</h1>
@@ -45,9 +45,9 @@ class App extends React.Component<{}, IState> {
           <BookGenrePage listName={match.params.list_name} error={this.state.error}/>
           )
           }}/>
-        </main>
+        </>
         }
-    </body>
+    </>
     )
   };
 };

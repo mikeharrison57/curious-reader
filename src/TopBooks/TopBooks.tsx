@@ -1,7 +1,7 @@
 import React from 'react';
 import {IState, IList, IBook, Props} from '../Interfaces';
 import BookCard from '../BookCard/BookCard';
-import '../BooksContainer.css'
+import '../TopBooks/TopBooks.css'
 
 const TopBooks = ({ genres }: Props) => {
 

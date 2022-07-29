@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchBooksByGenre } from '../api-calls';
 import BookCard from '../BookCard/BookCard';
-import '../BooksContainer.css'
+import '../BookGenrePage/BookGenrePage.css'
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 interface Props {

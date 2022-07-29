@@ -1,7 +1,7 @@
 .book-card {
 	width: 240px;
   height: 297px;
-	background: #FF6663;
+	background: #e0e1dc;
 	transform-style: preserve-3d;
 	box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
 	transition: 1s;
@@ -70,7 +70,7 @@
   align-items: center;
   flex-direction: column;
   margin: 2vh;
-  color:white;
+  color:black;
   text-align: center;
   font-size: small;
   position: absolute;
@@ -80,7 +80,6 @@
 	z-index: -1;
 	margin-top: 5px;
 }
-
 
 .info-publishing {
   position: fixed; 
@@ -92,6 +91,7 @@
 }
 
 .title {
+	font-weight: bolder;
   font-size: large;
   margin: 2vh;
   margin-bottom: 0;
@@ -100,4 +100,9 @@
 .author {
   font-style: italic;
   margin-top: .5vh; 
+}
+
+.current-rank {
+  margin-bottom: .3vh;
+  margin-top: .2vh;
 }
