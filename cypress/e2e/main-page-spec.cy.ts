@@ -45,7 +45,24 @@ describe('Top Book Page', () => {
     cy.url().should('eq', 'http://localhost:3000/Combined%20Print%20and%20E-Book%20Fiction')
     // revisit test to add data sample after fixture is added.
   })
-  // revisit to add error handling
-})
 
-// select different book genres/ filtered
+  // it('Should display an error message if a network request fails.', () => {
+  //   cy.intercept('GET', 'https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Lyj', {
+  //     statusCode: 404,
+  //     body: {
+  //       error: "Cannot GET /svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Lyj"
+  //     }
+  //   })
+  //   .get('h3').should('have.text', 'Hey, we\'re having some technical difficulties right now. Come see us again soon!')
+  // })
+
+  it('Should display an error message if a network request fails.', () => {
+    cy.intercept('GET', 'https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Lyj', {
+      statusCode: 500,
+      body: {
+        error: "Cypress forced 500"
+      }
+    })
+    .get('h3').contains('Hey, we\'re having some technical difficulties right now. Come see us again soon!')
+  })
+})
