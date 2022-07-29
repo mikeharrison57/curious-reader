@@ -13,11 +13,11 @@ const BookCard = ({ book }: Props) => {
         <img className='book-image' src={book.book_image}></img>
         </div>
         <div className='description-box'>
-          <p>{book.title}</p>
-          <p>{book.author}</p>
+          <p className='book-title'>{book.title}</p>
+          <p className='book-author'>{book.author}</p>
+          <p className='current-rank'>NY Times Current Rank: {book.rank}</p>
           <p>{book.description}</p>
-          <p>{book.publisher}</p>
-          <p>{book.rank}</p>
+          <p className='info-publishing'>{book.publisher} Publishing</p>
       </div>
     </article>
   )
