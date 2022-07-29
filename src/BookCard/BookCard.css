@@ -1,16 +1,22 @@
 .book-card {
-  width: 233px;
+  width: 235px;
   background-color: #FF6663;
   color: white;
 }
 
 .book-image {
-  width: 239px;
-  height: 317px;
-  object-fit: fill;
+  width: 234px;
+  display: block
 }
 
-.book-image-container {
-  width: 233px;
-  height: 317px;
+.description-box {
+  padding: 10px;
+}
+
+.title {
+  font-weight: bolder;
+}
+
+.author {
+  font-style: italic;
 }
