@@ -10,6 +10,7 @@ export interface IState {
 export interface IList {
   list_id: number
   list_name: string
+  display_name: string
   books: IBook[]
 }
 

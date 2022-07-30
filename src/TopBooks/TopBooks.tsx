@@ -6,6 +6,7 @@ import '../TopBooks/TopBooks.css'
 const TopBooks = ({ genres }: Props) => {
 
   const numberOneBooks = genres.bookLists.map((list) => {
+    console.log(list)
    return (
     <BookCard key={list.list_id} book={list.books[0]}/>
    )
