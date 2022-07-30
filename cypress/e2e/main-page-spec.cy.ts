@@ -14,7 +14,7 @@ describe('Top Book Page', () => {
     cy.get('.books-container').find('.book-card').should('have.length', 2)
   })
 
-  it('Should have a home page displaying books with details about the book.', () => {
+  it('Should have a home page displaying books with details about the books.', () => {
     cy.get('.book-card').first().should('contain.text', 'WHERE THE CRAWDADS SING')
     cy.get('.book-card').last().should('contain.text', 'THE BODY KEEPS THE SCORE')
     cy.get('.book-card').first().should('contain.text', 'In a quiet town on the North Carolina coast in 1969, a young woman who survived alone in the marsh becomes a murder suspect.')

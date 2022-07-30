@@ -16,7 +16,7 @@ const BookCard = ({ book }: Props) => {
         <p className='title'>{book.title}</p>
         <p className='author'>{book.author}</p>
         <p className='current-rank'>NY Times Current Rank: {book.rank}</p>
-        <p>{book.description}</p>
+        <p className='description'>{book.description}</p>
         <p className='info-publishing'>Publisher {book.publisher}</p>
       </div>
     </article>
