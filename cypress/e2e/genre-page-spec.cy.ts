@@ -23,5 +23,19 @@ describe('Top Book Page', () => {
     cy.get('.book-card').first().find('.title').should('contain.text', 'PORTRAIT OF AN UNKNOWN WOMAN')
     cy.get('.book-card').first().find('.description').should('contain.text', "The 22nd book in the Gabriel Allon series. Allon becomes an art forger to uncover a multibillion-dollar fraud.")
     cy.get('.book-card').first().find('.author').should('contain.text', "Daniel Silva")
+    cy.get('.book-card').last().find('.author').should('contain.text', "Silvia Moreno-Garcia")
+    cy.get('.book-card').last().find('.title').should('contain.text', "THE DAUGHTER OF DOCTOR MOREAU")
+    cy.get('.book-image').first().should('have.attr', 'src', 'https://storage.googleapis.com/du-prd/books/images/9780062834850.jpg')
+  })
+
+  it('Should have a navbar', () => {
+    cy.visit('http://localhost:3000/Hardcover%20Fiction')
+    cy.get('nav').should('be.visible')
+  })
+
+  it('It should contain a list of genres', () => {
+    cy.visit('http://localhost:3000/Hardcover%20Fiction')
+    cy.get('.genres-container').find('p').should('have.length', 3)
+    cy.get('.genres-container').find('p').last().should('have.text', 'Hardcover Fiction')
   })
 })
