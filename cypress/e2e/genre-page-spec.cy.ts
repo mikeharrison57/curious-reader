@@ -38,4 +38,17 @@ describe('Top Book Page', () => {
     cy.get('.genres-container').find('p').should('have.length', 3)
     cy.get('.genres-container').find('p').last().should('have.text', 'Hardcover Fiction')
   })
+
+  it('Should be able to navigate from one genre page to another genre page.', () => {
+    cy.visit('http://localhost:3000/Combined%20Print%20and%20E-Book%20Fiction')
+    cy.get('.book-card').first().find('.author').should('contain.text', "Delia Owens")
+    cy.get('.genres-container').find('p').last().click()
+    cy.url().should('eq', 'http://localhost:3000/Hardcover%20Fiction')
+    cy.visit('http://localhost:3000/Hardcover%20Fiction')
+    cy.get('.book-card').first().find('.author').should('contain.text', "Daniel Silva")
+    // cy.get('.book-card').first().should('contain.text', 'WHERE THE CRAWDADS SING')
+    // cy.go('forward')
+    // cy.url().should('eq', 'http://localhost:3000/Combined%20Print%20and%20E-Book%20Fiction')
+    // revisit test to add data sample after fixture is added.
+  })
 })
