@@ -106,3 +106,16 @@
   margin-bottom: .3vh;
   margin-top: .2vh;
 }
+
+.book-flag {
+  background-color: #7A5177;
+  color: white;
+  padding: 2px;
+  margin-top: 45px;
+  width: 235px;
+  clip-path: polygon(0% 0%, 100% 0%, 85% 50%, 100% 100%, 0% 100%)
+}
+
+.flag-text {
+  padding-left: 12px;
+}
