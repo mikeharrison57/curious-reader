@@ -46,9 +46,14 @@ describe('Top Book Page', () => {
     cy.url().should('eq', 'http://localhost:3000/Hardcover%20Fiction')
     cy.visit('http://localhost:3000/Hardcover%20Fiction')
     cy.get('.book-card').first().find('.author').should('contain.text', "Daniel Silva")
-    // cy.get('.book-card').first().should('contain.text', 'WHERE THE CRAWDADS SING')
-    // cy.go('forward')
-    // cy.url().should('eq', 'http://localhost:3000/Combined%20Print%20and%20E-Book%20Fiction')
-    // revisit test to add data sample after fixture is added.
+  })
+
+  it('Should be able to navigate using the window back and forward buttons.', () => {
+    cy.get('.genres-container').find('p').last().click()
+    cy.url().should('eq', 'http://localhost:3000/Hardcover%20Fiction')
+    cy.go('back')
+    cy.url().should('eq', 'http://localhost:3000/')
+    cy.go('forward')
+    cy.url().should('eq', 'http://localhost:3000/Hardcover%20Fiction')
   })
 })
