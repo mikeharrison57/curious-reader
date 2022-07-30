@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import { fetchBookData } from '../api-calls';
 import Sidebar from '../Sidebar/Sidebar';
-import {IState, IList, IBook} from '../Interfaces';
+import {IState} from '../Interfaces';
 import TopBooks from '../TopBooks/TopBooks';
 import BookGenrePage from '../BookGenrePage/BookGenrePage';
 import { NavLink, Route } from 'react-router-dom';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import BookIcon from '../assets/book.png';
 
-class App extends React.Component<{}, IState> {
+class App extends Component<{}, IState> {
   state: IState = {
     bookLists: [],
     error: false
@@ -32,7 +33,10 @@ class App extends React.Component<{}, IState> {
         <>
           <nav>
             <NavLink to={'/'} style={{ textDecoration: 'none' }}>
-              <h1>Curious Reader</h1>
+              <article className='header-container'>
+                <h1>Curious Reader</h1>
+                <img src={BookIcon} className='book-icon'/>
+              </article>
             </NavLink>
             <Sidebar genres={this.state} />
           </nav>
