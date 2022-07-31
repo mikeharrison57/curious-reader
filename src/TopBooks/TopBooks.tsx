@@ -7,7 +7,6 @@ import { listeners } from 'process';
 const TopBooks = ({ genres }: Props) => {
 
   const numberOneBooks = genres.bookLists.map((list) => {
-    console.log(list)
    return (
     <BookCard key={list.list_id} book={list.books[0]} listName={list.display_name}/>
    )

@@ -61,7 +61,7 @@ const BookGenrePage = ({listName, error}: Props) => {
 
   const selectedGenreBooks =  list.books.map((book) => {
     return (
-      <BookCard key={book.isbns[1]} book={book} listName={listName}/>
+      <BookCard key={Math.random()} book={book} listName={listName}/>
     );
   });
 

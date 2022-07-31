@@ -8,12 +8,8 @@ nav {
   top: 0;
   left: 0;
   padding: 18px;
-  overflow-y: auto;
 }
 
-nav::-webkit-scrollbar {
-  display: none;
-}
 
 h1 {
   color: white;
