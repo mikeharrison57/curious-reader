@@ -29,3 +29,10 @@ h1 {
   align-items: center;
   justify-content: space-evenly;
 }
+
+.loading-icon {
+  height: 50vh;
+  width: 50vw;
+  align-items: center;
+  filter: brightness(5) invert(5);
+}

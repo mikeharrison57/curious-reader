@@ -1,5 +1,5 @@
 import React from 'react';
-import {IState, IList, IBook, Props} from '../Interfaces';
+import { Props } from '../Interfaces';
 import './Sidebar.css';
 import { NavLink } from 'react-router-dom';
 
@@ -13,6 +13,7 @@ const Sidebar = ({ genres }: Props)  => {
   });
   
   return (
+    
     <section className='genres-container'>
       {bookGenres}
     </section>

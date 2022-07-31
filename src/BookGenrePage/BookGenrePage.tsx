@@ -3,6 +3,8 @@ import { fetchBooksByGenre } from '../api-calls';
 import BookCard from '../BookCard/BookCard';
 import '../BookGenrePage/BookGenrePage.css'
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import loadingIcon from '../assets/orange-loading.gif';
+
 
 interface Props {
   listName: string
@@ -67,7 +69,7 @@ const BookGenrePage = ({listName, error}: Props) => {
 
   return (
     <section className='books-container'>
-      {genreError ? <ErrorMessage /> : selectedGenreBooks}
+      {genreError ? <ErrorMessage /> : !list.books.length ? <img src={loadingIcon} className='loading-icon'/> : selectedGenreBooks}
     </section>
   );
 };
