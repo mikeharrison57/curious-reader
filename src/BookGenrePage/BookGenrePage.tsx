@@ -4,14 +4,16 @@ import BookCard from '../BookCard/BookCard';
 import '../BookGenrePage/BookGenrePage.css'
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import loadingIcon from '../assets/orange-loading.gif';
+import { IState, IList } from '../Interfaces';
 
 
 interface Props {
   listName: string
   error: boolean
+  genres: IState
 };
 
-const BookGenrePage = ({listName, error}: Props) => {
+const BookGenrePage = ({listName, genres, error}: Props) => {
 
   const [ list, setList ] = useState({
     "list_name": "",
@@ -30,19 +32,13 @@ const BookGenrePage = ({listName, error}: Props) => {
   const [genreError, setGenreError] = useState(error);
 
   const getListData = () => {
-    fetchBooksByGenre(listName)
-    .then((data) => { 
-      setList(data.results)
-    })
-    .catch((err) => {
-      console.log(err)
-      setGenreError(true)
-    })
+    const selectedGenre: IList = genres.bookLists.find(genre => genre.list_name === listName)
+   return setList(selectedGenre)
   };
 
   useEffect(() => {
       getListData()
-      return clearEffect();
+      // return clearEffect();
   }, [listName]);
 
   const clearEffect = () => {
@@ -61,15 +57,24 @@ const BookGenrePage = ({listName, error}: Props) => {
     });
   };
 
-  const selectedGenreBooks =  list.books.map((book) => {
+ 
+  // console.log('this is selectedGenre.books', selectedGenre.books)
+  const selectedGenreBooks = list.books.map(book => {
     return (
       <BookCard key={Math.random()} book={book} listName={listName}/>
-    );
-  });
+    )
+  })
+
+  // const selectedGenreBooks =  list.books.map((book) => {
+  //   return (
+  //     <BookCard key={Math.random()} book={book} listName={listName}/>
+  //   );
+  // });
 
   return (
     <section className='books-container'>
-      {genreError ? <ErrorMessage /> : !list.books.length ? <img src={loadingIcon} className='loading-icon'/> : selectedGenreBooks}
+      {/* {genreError ? <ErrorMessage /> : !list.books.length ? <img src={loadingIcon} className='loading-icon'/> : selectedGenreBooks} */}
+      <selectedGenreBooks />
     </section>
   );
 };
