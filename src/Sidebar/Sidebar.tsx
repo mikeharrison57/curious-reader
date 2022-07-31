@@ -7,7 +7,7 @@ const Sidebar = ({ genres }: Props)  => {
   const bookGenres = genres.bookLists.map((list) => {
     return (  
       <NavLink key={list.list_id} to={`/${list.list_name}`} style={{ textDecoration: 'none' }}>
-        <p className='genre-links'>{list.list_name}</p>
+        <p className='genre-links'>{list.display_name}</p>
       </NavLink>
     )
   });
