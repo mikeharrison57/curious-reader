@@ -23,7 +23,7 @@ const BookCard = ({ book, listName }: Props) => {
         </div>
       </article>
       <article className='book-flag'>
-        <p className='flag-text'>No. #{book.rank} of {listName}</p>
+        <p className='flag-text'>#{book.rank} in {listName}</p>
       </article>
     </section>
 

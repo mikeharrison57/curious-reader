@@ -4,6 +4,16 @@
   align-items: center;
   background-color: #E7E7E7;
   font-size: xx-large;
-  color: #FF6663;
+  color: white;
+  border: black 7px solid;
   height: 100vh;
+  background: #7A5177;
+
+}
+.error > h3 {
+  border: black 6px solid;
+  margin: 1vh;
+  font-family: sans;
+  background: #7A5177;
+
 }
