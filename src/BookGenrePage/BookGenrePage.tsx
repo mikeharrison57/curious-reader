@@ -36,8 +36,7 @@ const BookGenrePage = ({listName, genres, error}: Props) => {
   };
 
   useEffect(() => {
-    console.log('list', list)
-      getListData()
+     getListData()
   }, [genres, listName]);
 
     const returnBooksArray = () => {
