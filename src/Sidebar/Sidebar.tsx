@@ -13,7 +13,6 @@ const Sidebar = ({ genres }: Props)  => {
   });
   
   return (
-    
     <section className='genres-container'>
       {bookGenres}
     </section>

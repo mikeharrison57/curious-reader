@@ -22,6 +22,14 @@ describe('Top Book Page', () => {
     cy.get('.book-image').first().should('have.attr', 'src', 'https://storage.googleapis.com/du-prd/books/images/9780735219090.jpg')
   })
 
+  it('Should have a home page not displaying this book with these details.', () => {
+    cy.get('.book-card').first().should('not.contain', 'PORTRAIT OF AN UNKNOWN WOMAN')
+    cy.get('.book-card').last().should('not.contain', 'WHERE THE CRAWDADS SING')
+    cy.get('.book-card').first().should('not.contain', 'How trauma affects the body and mind, and innovative treatments for recovery.')
+    cy.get('.book-card').last().should('not.contain', 'Bessel van der Kolk')
+    cy.get('.book-image').first().should('not.have.attr', 'src', 'https://storage.googleapis.com/du-prd/books/images/9780670785933.jpg')
+  })
+
   it('Should have a navbar', () => {
     cy.get('nav').should('be.visible')
   })
@@ -46,24 +54,25 @@ describe('Top Book Page', () => {
     // revisit test to add data sample after fixture is added.
   })
 
-  // it('Should display an error message if a network request fails.', () => {
-  //   cy.visit('http://localhost:3000')
-  //   cy.intercept('GET', 'https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Ly', {
-  //     statusCode: 404,
-  //     body: {
-  //       error: "Cannot GET /svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Ly"
-  //     }
-  //   })
-  //   .get('.error-message').should('have.text', 'Hey, we\'re having some technical difficulties right now. Come see us again soon!')
-  // })
+  it('Should display an error message if a network request fails.', () => {
+    cy.intercept('GET', 'https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Lyj', {
+      statusCode: 404,
+      body: {
+        error: "Cannot GET /svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Ly"
+      }
+    })
+    cy.visit('http://localhost:3000')
+    .get('.error-message').should('have.text', 'Hey, we\'re having some technical difficulties right now.  Come see us again soon!')
+  })
 
-  // it('Should display an error message if a network request fails.', () => {
-  //   cy.intercept('GET', 'https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Lyj', {
-  //     statusCode: 500,
-  //     body: {
-  //       error: "Cypress forced 500"
-  //     }
-  //   })
-  //   .get('h3').contains('Hey, we\'re having some technical difficulties right now. Come see us again soon!')
-  // })
+  it('Should display an error message if a network request fails.', () => {
+    cy.intercept('GET', 'https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Lyj', {
+      statusCode: 500,
+      body: {
+        error: "Cypress forced 500"
+      }
+    })
+    cy.visit('http://localhost:3000')
+    .get('.error-message').should('have.text', 'Hey, we\'re having some technical difficulties right now.  Come see us again soon!')
+  })
 })
