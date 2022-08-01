@@ -5,15 +5,14 @@
   background-color: #E7E7E7;
   font-size: xx-large;
   color: white;
-  border: black 2px solid;
+  border: black 7px solid;
   height: 100vh;
   background: #7A5177;
 
 }
 .error > h3 {
-  /* -webkit-text-stroke: 2px black;  */
   border: black 6px solid;
-  margin: 3vh;
+  margin: 1vh;
   font-family: sans;
   background: #7A5177;
 
