@@ -22,6 +22,14 @@ describe('Top Book Page', () => {
     cy.get('.book-image').first().should('have.attr', 'src', 'https://storage.googleapis.com/du-prd/books/images/9780735219090.jpg')
   })
 
+  it('Should have a home page not displaying this book with these details.', () => {
+    cy.get('.book-card').first().should('not.contain', 'PORTRAIT OF AN UNKNOWN WOMAN')
+    cy.get('.book-card').last().should('not.contain', 'WHERE THE CRAWDADS SING')
+    cy.get('.book-card').first().should('not.contain', 'How trauma affects the body and mind, and innovative treatments for recovery.')
+    cy.get('.book-card').last().should('not.contain', 'Bessel van der Kolk')
+    cy.get('.book-image').first().should('not.have.attr', 'src', 'https://storage.googleapis.com/du-prd/books/images/9780670785933.jpg')
+  })
+
   it('Should have a navbar', () => {
     cy.get('nav').should('be.visible')
   })
