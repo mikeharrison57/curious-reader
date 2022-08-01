@@ -1,77 +1,62 @@
 import React, { useState, useEffect } from 'react';
-import { fetchBooksByGenre } from '../api-calls';
 import BookCard from '../BookCard/BookCard';
 import '../BookGenrePage/BookGenrePage.css'
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import loadingIcon from '../assets/orange-loading.gif';
-
+import { IState, IList } from '../Interfaces';
 
 interface Props {
   listName: string
   error: boolean
+  genres: IState
 };
 
-const BookGenrePage = ({listName, error}: Props) => {
+let defaultList = {
+  "list_name": "",
+  "list_name_encoded": "",
+  "bestsellers_date": "",
+  "published_date": "",
+  "published_date_description": "",
+  "next_published_date": "",
+  "previous_published_date": "",
+  "display_name": "",
+  "normal_list_ends_at": 0,
+  "updated": "",
+  "books": []
+}
 
-  const [ list, setList ] = useState({
-    "list_name": "",
-    "list_name_encoded": "",
-    "bestsellers_date": "",
-    "published_date": "",
-    "published_date_description": "",
-    "next_published_date": "",
-    "previous_published_date": "",
-    "display_name": "",
-    "normal_list_ends_at": 0,
-    "updated": "",
-    "books": []
-  });
+const BookGenrePage = ({listName, genres, error}: Props) => {
+  const [ list, setList ] = useState(defaultList);
 
-  const [genreError, setGenreError] = useState(error);
+  const [genreError] = useState(error);
 
   const getListData = () => {
-    fetchBooksByGenre(listName)
-    .then((data) => { 
-      setList(data.results)
-    })
-    .catch((err) => {
-      console.log(err)
-      setGenreError(true)
-    })
+      const selectedGenre: IList = genres.bookLists.find(genre => genre.list_name === listName)
+      setList(selectedGenre)
   };
 
   useEffect(() => {
-      getListData()
-      return clearEffect();
-  }, [listName]);
+     getListData()
+  }, [genres, listName]);
 
-  const clearEffect = () => {
-    setList({
-      "list_name": "",
-      "list_name_encoded": "",
-      "bestsellers_date": "",
-      "published_date": "",
-      "published_date_description": "",
-      "next_published_date": "",
-      "previous_published_date": "",
-      "display_name": "",
-      "normal_list_ends_at": 0,
-      "updated": "",
-      "books": []
-    });
-  };
-
-  const selectedGenreBooks =  list.books.map((book) => {
-    return (
-      <BookCard key={Math.random()} book={book} listName={listName}/>
-    );
-  });
+    const returnBooksArray = () => {
+      return list.books.map(book => {
+        return (
+          <BookCard key={Math.random()} book={book} listName={listName}/>
+        )
+      })
+    }
 
   return (
+    <>
+    {list && 
     <section className='books-container'>
-      {genreError ? <ErrorMessage /> : !list.books.length ? <img src={loadingIcon} className='loading-icon'/> : selectedGenreBooks}
+      {genreError ? <ErrorMessage /> : !list.books.length ? <img src={loadingIcon} className='loading-icon'/> : returnBooksArray()}
     </section>
-  );
+     }
+     </>
+     
+     );
 };
 
 export default BookGenrePage;
