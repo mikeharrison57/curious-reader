@@ -22,6 +22,8 @@
 
 ## Deployed Link
 
+- Check out our application [here!](https://curious-reader.herokuapp.com/) 
+
 ## Illustrations
 
 ## Application Wireframe and Component Architecture
