@@ -52,4 +52,26 @@ describe('Top Book Page', () => {
     cy.go('forward')
     cy.url().should('eq', 'http://localhost:3000/Combined%20Print%20and%20E-Book%20Fiction')
   })
+
+  it('Should display an error message if a network request fails.', () => {
+    cy.intercept('GET', 'https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Lyj', {
+      statusCode: 404,
+      body: {
+        error: "Cannot GET /svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Ly"
+      }
+    })
+    cy.visit('http://localhost:3000/Combined%20Print%20and%20E-Book%20Fiction')
+    .get('.error-message').should('have.text', 'Hey, we\'re having some technical difficulties right now.  Come see us again soon!')
+  })
+
+  it('Should display an error message if a network request fails.', () => {
+    cy.intercept('GET', 'https://api.nytimes.com/svc/books/v3/lists/full-overview.json?api-key=tBjYHYybf8UG944wMFG4Hn44NXmN9Lyj', {
+      statusCode: 500,
+      body: {
+        error: "Cypress forced 500"
+      }
+    })
+    cy.visit('http://localhost:3000/Hardcover%20Fiction')
+    .get('.error-message').should('have.text', 'Hey, we\'re having some technical difficulties right now.  Come see us again soon!')
+  })
 })
