@@ -26,6 +26,8 @@
 
 ## Illustrations
 
+![200](https://user-images.githubusercontent.com/98493391/182264909-a62c2156-6bd4-4378-bc95-ee81598e98c7.gif)
+
 ## Application Wireframe and Component Architecture
 
 ### Application Wireframes
