@@ -1,10 +1,10 @@
 export interface Props {
-  genres: IState
+  genres: any | IState
 }
 
 export interface IState {
-  bookLists: IList[]
-  error: boolean
+  bookLists: IList
+  error: any | boolean 
 }
 
 export interface IList {

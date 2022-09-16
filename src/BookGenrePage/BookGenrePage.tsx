@@ -8,7 +8,7 @@ import { IState, IList } from '../Interfaces';
 interface Props {
   listName: string
   error: boolean
-  genres: IState
+  genres: object;
 };
 
 let defaultList = {
@@ -31,7 +31,7 @@ const BookGenrePage = ({listName, genres, error}: Props) => {
   const [genreError] = useState(error);
 
   const getListData = () => {
-      const selectedGenre: IList = genres.bookLists.find(genre => genre.list_name === listName)
+      const selectedGenre: IList = genres['bookLists'].find((genre: { list_name: string; }) => genre.list_name === listName)
       setList(selectedGenre)
   };
 
