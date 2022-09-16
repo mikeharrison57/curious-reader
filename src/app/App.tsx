@@ -70,13 +70,17 @@ const App = () => {
 
   useEffect(() => {
     fetchBookData()
-    .then((data) => setBookLists(data.results.lists))
+    .then((data) => {
+      console.log(data)
+      return setBookLists(data.results.lists)
+    })
   .catch((err) => setError(true))
   }, [])
   
     return (
     <>
       {error ? <div><ErrorMessage /></div> :
+      bookLists.length &&
         <>
           <nav>
             <NavLink to={'/'} style={{ textDecoration: 'none' }}>

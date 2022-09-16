@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import BookCard from '../BookCard/BookCard';
 import '../BookGenrePage/BookGenrePage.css'
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import loadingIcon from '../assets/orange-loading.gif';
-import { IState, IList } from '../Interfaces';
+import { IList } from '../Interfaces';
 
 interface Props {
   listName: string
   error: boolean
-  genres: object;
+  genres: any[]
 };
 
 let defaultList = {
@@ -25,38 +25,37 @@ let defaultList = {
   "books": []
 }
 
-const BookGenrePage = ({listName, genres, error}: Props) => {
-  const [ list, setList ] = useState(defaultList);
+const BookGenrePage = ({ listName, genres, error }: Props) => {
+  const [list, setList] = useState(defaultList);
 
   const [genreError] = useState(error);
 
   const getListData = () => {
-      const selectedGenre: IList = genres['bookLists'].find((genre: { list_name: string; }) => genre.list_name === listName)
-      setList(selectedGenre)
+    const selectedGenre: IList = genres.find((genre: { list_name: string; }) => genre.list_name === listName)
+    setList(selectedGenre)
   };
 
   useEffect(() => {
-     getListData()
+    getListData()
   }, [genres, listName]);
 
-    const returnBooksArray = () => {
-      return list.books.map(book => {
-        return (
-          <BookCard key={Math.random()} book={book} listName={listName}/>
-        )
-      })
-    }
+  const returnBooksArray = () => {
+    return list.books.map(book => {
+      return (
+        <BookCard key={Math.random()} book={book} listName={listName} />
+      )
+    })
+  }
 
   return (
     <>
-    {list && 
-    <section className='books-container'>
-      {genreError ? <ErrorMessage /> : !list.books.length ? <img src={loadingIcon} className='loading-icon'/> : returnBooksArray()}
-    </section>
-     }
-     </>
-     
-     );
+      {list &&
+        <section className='books-container'>
+          {genreError ? <ErrorMessage /> : !list.books.length ? <img src={loadingIcon} className='loading-icon' /> : returnBooksArray()}
+        </section>
+      }
+    </>
+  );
 };
 
 export default BookGenrePage;

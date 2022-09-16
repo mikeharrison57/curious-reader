@@ -7,7 +7,7 @@ import loadingIcon from '../assets/orange-loading.gif';
 
 const TopBooks = ({ genres }: Props) => {
 
-  const numberOneBooks = genres.bookLists.map((list) => {
+  const numberOneBooks = genres.map((list) => {
    return (
     <BookCard key={list.list_id} book={list.books[0]} listName={list.display_name}/>
    )
