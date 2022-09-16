@@ -35,8 +35,8 @@ class App extends Component<{}, IState> {
           <nav>
             <NavLink to={'/'} style={{ textDecoration: 'none' }}>
               <article className='header-container'>
-                <h1>Curious Reader</h1>
-                <img src={BookIcon} className='book-icon'/>
+                <h1 tabIndex="0">Curious Reader</h1>
+                <img tabIndex="0" src={BookIcon} className='book-icon'/>
               </article>
             </NavLink>
             <Sidebar genres={this.state} />
