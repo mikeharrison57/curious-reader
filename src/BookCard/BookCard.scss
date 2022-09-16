@@ -1,0 +1,128 @@
+.book-card {
+  margin: 1rem;
+  width: 15rem;
+  height: 18.75rem;
+  background: #e0e1dc;
+  transform-style: preserve-3d;
+  box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5), 20px 0 60px rgba(0, 0, 0, .5);
+  transition: 1s;
+}
+
+.book-card:hover {
+  transform: translate(-2%, -2%) perspective(2000px) rotate(10deg) scale(1.2);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5), 0 10px 100px rgba(0, 0, 0, .5);
+  z-index: 1;
+}
+
+.book-card:before {
+  content: '';
+  position: absolute;
+  top: -.3px;
+  left: 0;
+  width: 100%;
+  height: .3px;
+  background: #BAC1BA;
+  transform-origin: bottom;
+  transform: skewX(-45deg);
+}
+
+.book-card:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -.3px;
+  width: .3px;
+  height: 100%;
+  background: #92A29C;
+  transform-origin: left;
+  transform: skewY(-45deg);
+}
+
+.book-card .book-image {
+  width: 15rem;
+  height: 18.75;
+  position: relative;
+  transform-origin: left;
+  transition: .7s;
+}
+
+.book-card .card-mask {
+  position: absolute;
+  background: #e0e1dc;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: .7s;
+}
+
+.book-card:hover .book-image {
+  transform: rotateY(-165deg);
+}
+
+.book-card:hover .card-mask {
+  opacity: 1;
+  transition: .6s;
+  box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+}
+
+.description-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2vh;
+  color: black;
+  text-align: center;
+  font-size: small;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: -1;
+  margin-top: .3rem;
+}
+
+.info-publishing {
+  position: fixed;
+  bottom: 0;
+  right: 1%;
+  width: 100%;
+  text-align: center;
+  font-size: .7em;
+}
+
+.title {
+  font-weight: bolder;
+  font-size: large;
+  margin: 2vh;
+  margin-bottom: 0;
+}
+
+.author {
+  font-style: italic;
+  margin-top: .5vh;
+}
+
+.current-rank {
+  margin-bottom: .3vh;
+  margin-top: .2vh;
+}
+
+.book-flag {
+  background-color: #7A5177;
+  color: white;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  // margin-top: 5rem;
+  width: 235px;
+  height: 60px;
+  clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
+  margin-bottom: 2vh;
+}
+
+.flag-text {
+  padding-left: 1rem;
+  font-size: 16px;
+  padding-right: 30px;
+}
