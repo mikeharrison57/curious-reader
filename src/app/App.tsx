@@ -8,6 +8,7 @@ import BookGenrePage from '../BookGenrePage/BookGenrePage';
 import { NavLink, Route } from 'react-router-dom';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import BookIcon from '../assets/book.png';
+import Dropdown from '../Dropdown/Dropdown';
 
 class App extends Component<{}, IState> {
   state: IState = {
@@ -39,6 +40,7 @@ class App extends Component<{}, IState> {
               </article>
             </NavLink>
             <Sidebar genres={this.state} />
+            <Dropdown genres={this.state}/>
           </nav>
         <Route exact path='/' render={() =>
           <TopBooks genres={this.state}/> 
