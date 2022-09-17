@@ -9,7 +9,7 @@
   right: 0;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .books-container {
     width: 100%;
     padding: 1rem;

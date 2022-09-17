@@ -87,9 +87,9 @@ const App = () => {
               <article className='header-container'>
                 <h1 tabIndex="0">Curious Reader</h1>
                 <img tabIndex="0" src={BookIcon} className='book-icon'/>
+                <Sidebar genres={bookLists} />
               </article>
             </NavLink>
-            <Sidebar genres={bookLists} />
             <Dropdown genres={bookLists}/>
           </nav>
         <Route exact path='/' render={() =>

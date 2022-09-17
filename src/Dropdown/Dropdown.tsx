@@ -1,5 +1,6 @@
 import { Props } from '../Interfaces';
 import { useHistory } from "react-router-dom";
+import './Dropdown.scss'
 
 const Dropdown = ({ genres }: Props) => {
   let history = useHistory();
