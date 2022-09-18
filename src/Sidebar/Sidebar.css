@@ -1,5 +1,7 @@
 .genres-container {
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .genre-links {
@@ -9,3 +11,8 @@
   box-shadow: 5px;
 }
 
+.genre-links:hover {
+  cursor: pointer;
+  background-color: #F3DAA0;
+  color: black;
+}
